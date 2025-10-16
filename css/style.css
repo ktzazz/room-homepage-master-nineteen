@@ -1,18 +1,1 @@
-:root {
-  --primary-color: hsl(0, 100%, 100%);
-  --secondary-color: hsl(0, 0%, 63%);
-  --terciary-color: hsl(0, 0%, 27%);
-  --accent-color: hsl(0, 0%, 0%);
-  --Font: League Spartan, sans-serif;
-  --Weight500: 500;
-  --Weight600: 600;
-  --Weight700: 700;
-  --FontSize: 1rem;
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+:root{--primary-color: hsl(0, 100%, 100%);--secondary-color: hsl(0, 0%, 63%);--terciary-color: hsl(0, 0%, 27%);--accent-color: hsl(0, 0%, 0%);--Font: League Spartan, sans-serif;--Weight500: 500;--Weight600: 600;--Weight700: 700;--FontSize: 1rem}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}.inactive{display:none}a{text-decoration:none}body{font-family:var(--Font);display:flex;flex-direction:column;width:100%;height:100vh;overflow-x:hidden}header{position:absolute;top:0;left:0;width:100%;padding:clamp(2rem,8vh,7rem) min(7%,8rem)}.header__menu{width:100%;display:grid;grid-template-columns:auto 1fr;align-items:center}@media(min-width: 64em){.header__menu{gap:7%}}.mobile__btn{background:none;border:none;cursor:pointer}@media(min-width: 64em){.mobile__btn{display:none}}.header__logo{justify-self:center}@media(min-width: 64em){.header__logo{justify-content:flex-start}}.header__nav{display:none;position:fixed;height:100%;top:0;left:0;width:0;background-color:var(--secondary-color);overflow-x:hidden;transition:width .5s ease-in-out;z-index:5}.header__nav ul{list-style:none;padding-block-start:60%;padding-inline-start:10%}.header__nav ul a{padding:.7rem;text-decoration:none;color:var(--primary-color);display:block;transition:.3s;font-family:var(--FontTitle);font-weight:var(--Weight300);font-size:clamp(1.7rem,2.5vw,3.5rem);text-transform:uppercase}@media(min-width: 64em){.header__nav{display:block;position:static;width:auto;height:auto;padding:0;background-color:rgba(0,0,0,0);z-index:auto;overflow:visible}.header__nav ul{display:flex;gap:2rem;list-style:none;padding:0}.header__nav ul li a{padding:0;text-decoration:none;color:var(--primary-color);position:relative;font-family:var(--Font);font-weight:var(--Weight500);font-size:var(--FontSize);text-transform:capitalize}.header__nav ul li a::after{content:"";position:absolute;top:150%;left:25%;width:50%;height:3px;background-color:var(--primary-color);transform:scaleX(0);transform-origin:bottom center;transition:transform .3s ease-out}.header__nav ul li a:hover::after{transform:scaleX(1)}}@media(min-width: 64em){main{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(2, auto)}}
