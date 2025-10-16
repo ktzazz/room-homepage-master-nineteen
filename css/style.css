@@ -1,3 +1,14 @@
+:root {
+  --primary-color: hsl(0, 100%, 100%);
+  --secondary-color: hsl(0, 0%, 63%);
+  --terciary-color: hsl(0, 0%, 27%);
+  --accent-color: hsl(0, 0%, 0%);
+  --Font: League Spartan, sans-serif;
+  --Weight500: 500;
+  --Weight600: 600;
+  --Weight700: 700;
+  --FontSize: 1rem;
+}
 *,
 *::before,
 *::after {

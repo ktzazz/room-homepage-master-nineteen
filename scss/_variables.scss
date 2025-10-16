@@ -1,0 +1,32 @@
+/* variables */
+
+$white: hsl(0, 100%, 100%);
+$grey:  hsl(0, 0%, 63%);
+$darkGrey:  hsl(0, 0%, 27%);
+$black:  hsl(0, 0%, 0%);
+$FontSpartan: 'League Spartan', sans-serif;
+$Weight500: 500;
+$Weight600: 600;
+$Weight700: 700;
+$FontSize: 1rem;
+
+:root{
+--primary-color: #{$white};
+--secondary-color: #{$grey};
+--terciary-color: #{$darkGrey};
+--accent-color: #{$black};
+--Font: #{$FontSpartan};
+--Weight500: #{$Weight500};
+--Weight600: #{$Weight600};
+--Weight700: #{$Weight700};
+--FontSize: #{$FontSize};
+}
+
+//media queries
+$breakpoints: (mobile: 23.125em, tablet: 47.5em, desktop: 64em);
+
+@mixin responsive($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
