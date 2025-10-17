@@ -1,2 +1,31 @@
 
 @use "variables" as v;
+
+h2{
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+    font-weight: var(--Weight700);
+    margin-block-end: 1.3rem;
+   
+   @include v.responsive(desktop){
+    font-size: clamp(2rem, 3.2vw, 4.2rem);
+    margin-block-end: min(4vh, 3rem);
+   }
+}
+
+.p__gallery{
+    font-size: 1.1rem;
+    font-weight: var(--Weight500);
+    line-height: 1.3;
+    color: var(--secondary-color);
+    margin-block-end: min(4vh, 3rem);
+
+    @include v.responsive(tablet){
+     margin-block-end: 0;
+    }
+
+    @include v.responsive(desktop){
+        font-size: clamp(1rem, 1vw, 2rem);
+        margin-block-end: min(4vh, 3rem);
+
+    }
+}

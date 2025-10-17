@@ -1,3 +1,151 @@
-/* non reusable modules (main, footer, etc) */
 
 @use "variables" as v;
+
+/* header */
+
+.header__menu{
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  @include v.responsive(desktop){
+    gap: 7%;
+  }
+}
+
+.mobile__btn{
+  background: none;
+  border: none;
+  cursor: pointer;
+  @include v.responsive(desktop){
+    display: none;
+  }
+}
+
+.header__logo{
+  justify-self: center;
+  @include v.responsive(desktop){
+    justify-content: flex-start;
+  }
+}
+
+.header__nav { 
+    display: none;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 0; 
+    background-color: var(--secondary-color);
+    overflow-x: hidden;
+    transition: width 0.5s ease-in-out; 
+    
+    z-index: 5;
+
+    & ul {
+        list-style: none;
+        padding-block-start: 60%;
+        padding-inline-start: 10%;
+
+      & a {
+        padding: 0.7rem;
+        text-decoration: none;
+        color: var(--primary-color);
+        display: block;
+        transition: 0.3s;
+        font-family: var(--FontTitle);
+        font-weight: var(--Weight300);
+        font-size: clamp(1.7rem, 2.5vw, 3.5rem);
+        text-transform: uppercase;
+      }
+
+    }
+
+
+    @include v.responsive(desktop) {
+        display: block; 
+        position: static; 
+        width: auto; 
+        height: auto; 
+        padding: 0; 
+        background-color: transparent; 
+        z-index: auto;
+        overflow: visible;
+
+        & ul {
+            display: flex; 
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+            & li a{
+             padding: 0;
+             text-decoration: none;
+             color: var(--primary-color);
+             position: relative;
+             font-family: var(--Font);
+             font-weight: var(--Weight500);
+             font-size: var(--FontSize);
+             text-transform: capitalize;
+            }
+    & li a::after{
+         content: ""; 
+         position: absolute;
+         top: 150%;
+         left: 25%;
+         width: 50%; 
+         height: 3px;
+         background-color: var(--primary-color);
+         transform: scaleX(0);
+         transform-origin: bottom center;
+         transition: transform 0.3s ease-out;
+    }
+    & li a:hover::after{
+        transform: scaleX(1);
+    }
+        }
+    }
+}
+
+
+.slide__container{
+    @include v.responsive(desktop){
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+.text__gallery{
+    padding: clamp(3rem, 6vh, 7.5rem) clamp(2rem, 8vw, 7rem);
+    @include v.responsive(tablet){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 1rem;
+
+        & h2{
+            grid-area: 1 / 1 / 1 / 1;
+        }
+
+        & p{
+            grid-area: 1 / 2 / 1 / 2;
+        }
+        & .shop__gallery{
+            grid-area: 1 / 1 / 1 / 1;
+            align-self: end;
+
+        }
+    }
+    @include v.responsive(desktop){
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        grid-area: 1 / 2 / 1 / 2;
+        padding: min(6rem, 10vh) min(5.5rem, 6vw);
+        align-self: flex-start;
+    }
+}
+
+.img__gallery img{
+    width: 100%;
+    object-fit: contain;
+}
