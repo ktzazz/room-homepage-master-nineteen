@@ -135,13 +135,18 @@
 
         }
     }
+
     @include v.responsive(desktop){
         display: flex;
         flex-direction: column;
         gap: 0;
         grid-area: 1 / 2 / 1 / 2;
         padding: min(6rem, 10vh) min(5.5rem, 6vw);
-        align-self: flex-start;
+
+        & .shop__gallery{
+            align-self: start;
+        }
+    
     }
 }
 
