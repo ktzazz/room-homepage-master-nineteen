@@ -53,7 +53,7 @@
         color: var(--primary-color);
         display: block;
         transition: 0.3s;
-        font-family: var(--FontTitle);
+        font-family: var(--Font);
         font-weight: var(--Weight300);
         font-size: clamp(1.7rem, 2.5vw, 3.5rem);
         text-transform: uppercase;
@@ -150,7 +150,37 @@
     }
 }
 
+
 .img__gallery img{
-    width: 100%;
+  width: 100%;
     object-fit: contain;
+}
+
+.gallery__container {
+  display: grid;
+   grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    position: relative;
+    z-index: -2;
+}
+
+
+.gallery__buttons{
+  grid-area: 1 / 1 / 1 / 1;
+  display: flex;
+    position: relative;
+ 
+}
+
+.gallery__buttons button{
+    background: var(--accent-color);
+    border: none;
+    padding: 2rem;
+    cursor: pointer;
+}
+
+.gallery__buttons svg{
+  display: flex;
+  align-self: center;
+    justify-content: center;
 }
