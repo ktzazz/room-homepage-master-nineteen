@@ -109,9 +109,10 @@
 .gallery__container {
   display: grid;
    grid-template-columns: 1fr;
-    grid-template-rows: minmax(540px, auto) auto;
+    grid-template-rows: auto auto;
     position: relative;
     z-index: -2;
+   
     @include v.responsive(desktop){
       grid-template-columns: auto auto;
       grid-template-rows: auto;
@@ -122,20 +123,24 @@
 .slide__container{
   display: grid;
    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr 1.2fr;
     position: relative;
+    @include v.responsive(tablet){
+        grid-template-rows: 1fr 0.5fr;
+    }
     @include v.responsive(desktop){
-      grid-template-rows: auto;
+      grid-template-rows: 1fr;
         grid-template-columns: 1.5fr 1fr;
     }
 }
 
 .img__gallery{
-  width: 100%;
+    width: 100%;
     @include v.responsive(desktop){
         grid-area: 1 / 1 / 1 / 1;
     }
     & img{
+      display: block;
       width: 100%;
       object-fit: cover;
     }
@@ -182,10 +187,17 @@
 .gallery__buttons{
   display: flex;
     position: absolute;
-    bottom: 0;
     right: 0;
+    width: auto;
+    @include v.responsive(tablet){
+    top: calc(50vh * 0.78);
+    }
     @include v.responsive(desktop){
-      grid-area: 1 / 1 / 1 / 2
+      right: auto;
+      top: auto;
+      left: 60%;
+      width: 40%;
+      bottom: 0;
     }
  
 }
