@@ -106,11 +106,38 @@
     }
 }
 
+.gallery__container {
+  display: grid;
+   grid-template-columns: 1fr;
+    grid-template-rows: minmax(540px, auto) auto;
+    position: relative;
+    z-index: -2;
+    @include v.responsive(desktop){
+      grid-template-columns: auto auto;
+      grid-template-rows: auto;
+    }
+}
+
 
 .slide__container{
+  display: grid;
+   grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    position: relative;
     @include v.responsive(desktop){
-        display: grid;
+      grid-template-rows: auto;
         grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+.img__gallery{
+  width: 100%;
+    @include v.responsive(desktop){
+        grid-area: 1 / 1 / 1 / 1;
+    }
+    & img{
+      width: 100%;
+      object-fit: cover;
     }
 }
 
@@ -137,6 +164,7 @@
     }
 
     @include v.responsive(desktop){
+      
         display: flex;
         flex-direction: column;
         gap: 0;
@@ -151,24 +179,14 @@
 }
 
 
-.img__gallery img{
-  width: 100%;
-    object-fit: contain;
-}
-
-.gallery__container {
-  display: grid;
-   grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    position: relative;
-    z-index: -2;
-}
-
-
 .gallery__buttons{
-  grid-area: 1 / 1 / 1 / 1;
   display: flex;
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include v.responsive(desktop){
+      grid-area: 1 / 1 / 1 / 2
+    }
  
 }
 
