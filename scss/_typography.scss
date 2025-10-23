@@ -5,7 +5,9 @@ h2{
     font-size: clamp(2.2rem, 5vw, 4.2rem);
     font-weight: var(--Weight700);
     margin-block-end: 1.3rem;
-   
+   @include v.responsive(tablet){
+    font-size: min(2.9rem,5.5vw);
+   }
    @include v.responsive(desktop){
     font-size: clamp(2rem, 3.2vw, 4.2rem);
     margin-block-end: min(4vh, 3rem);
@@ -32,7 +34,6 @@ h2{
 
 .shop__gallery{
         color: var(--accent-color);
-        margin-block-start: min(1.5vh, 2rem);
         letter-spacing: 0.7rem;
     }
 
