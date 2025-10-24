@@ -44,5 +44,21 @@ main{
   }
 }
 
+footer{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  z-index: 5;
+  bottom: 15px;
+  @include v.responsive(tablet){
+    justify-content: left;
+    padding: 0  min(5rem, 8vw);
+  }
+  @include v.responsive(desktop){
+    justify-content: center; 
+  }
+  
+}
+
 
 
