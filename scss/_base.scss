@@ -34,6 +34,7 @@ header{
   left: 0;
   width: 100%;
   padding: clamp(2rem, 8vh, 7rem) min(7%, 8rem);
+  z-index: 5;
 }
 
 main{

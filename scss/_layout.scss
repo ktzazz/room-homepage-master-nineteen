@@ -40,7 +40,7 @@
     overflow-x: hidden;
     transition: width 0.5s ease-in-out; 
     
-    z-index: 5;
+    
 
     & ul {
         list-style: none;
@@ -69,7 +69,7 @@
         height: auto; 
         padding: 0; 
         background-color: transparent; 
-        z-index: auto;
+        /* z-index: auto; */
         overflow: visible;
 
         & ul {
@@ -115,7 +115,6 @@
    grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     position: relative;
-    z-index: -2;
    
     @include v.responsive(desktop){
       grid-template-columns: auto auto;
@@ -144,13 +143,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 5; 
+    /* z-index: 0; */
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1.2fr; 
+    
 
     @include v.responsive(tablet) {
-        grid-template-rows: 1fr 0.5fr; 
+        grid-template-rows: 0.88fr 0.5fr; 
     }
 
     @include v.responsive(desktop) {
@@ -204,7 +204,7 @@
         flex-direction: column;
         gap: 0;
         grid-area: 1 / 2 / 1 / 2;
-        padding: min(6rem, 10vh) min(5.5rem, 6vw);
+        padding: min(9rem, 13vh) min(5.5rem, 6vw) 0 min(5.5rem, 6vw);
 
         & h2{
             padding-block-start: 0;
@@ -239,7 +239,7 @@
 .gallery__buttons button{
     background: var(--accent-color);
     border: none;
-    padding: 2rem;
+    padding: clamp(1.7rem, 2.21vw, 3.1rem);
     cursor: pointer;
 }
 
@@ -268,7 +268,7 @@
   }
   @include v.responsive(desktop){
     padding-block-start: 0;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 29.16% 41.68% 29.16%;
     grid-template-rows: min-content;
   }
 }

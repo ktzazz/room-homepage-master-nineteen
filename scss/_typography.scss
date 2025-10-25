@@ -32,14 +32,32 @@ h2{
     }
 }
 
-.shop__gallery{
-        color: var(--accent-color);
-        letter-spacing: 0.7rem;
-    }
+.shop__container{
+    z-index: 1000;
+    display: flex;
+    cursor: pointer;
+    & a{
+         color: var(--accent-color);
+    }     
+}
 
 .shop__text{
     text-transform: uppercase;
+    letter-spacing: 0.7rem;
     font-weight: var(--Weight600);
+    transition: letter-spacing 0.3s ease-in-out;
+}
+
+.shop__text:hover {
+    letter-spacing: 1.2rem;
+}
+
+
+
+
+.shop__arrow{
+    margin-inline-start: 0.7rem;
+    transition: transform 0.3s ease-out;
 }
 
 h3{
@@ -89,3 +107,7 @@ footer{
         color: var(--secondary-color);
     }
 }
+
+
+
+
