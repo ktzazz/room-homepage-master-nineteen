@@ -41,6 +41,7 @@ h2{
     }     
 }
 
+
 .shop__text{
     text-transform: uppercase;
     letter-spacing: 0.7rem;
@@ -48,17 +49,43 @@ h2{
     transition: letter-spacing 0.3s ease-in-out;
 }
 
-.shop__text:hover {
-    letter-spacing: 1.2rem;
-}
-
-
-
 
 .shop__arrow{
     margin-inline-start: 0.7rem;
     transition: transform 0.3s ease-out;
+    fill: var(--accent-color);
 }
+
+
+/* HOVER */
+
+
+.shop__container:hover .shop__text, 
+.shop__container:hover .shop__arrow{
+    fill: var(--secondary-color);
+    color: var(--secondary-color);
+    letter-spacing: 1.2rem;
+    transition: 0.3s ease-out;
+}
+
+@keyframes bounceX {
+  0%, 100% {
+    transform: translateX(0); /* Starting and ending position */
+  }
+  50% {
+    transform: translateX(50px); /* Move right */
+  }
+}
+
+.shop__container:hover .shop__arrow{
+    animation: bounceX 1.3s infinite;
+}
+
+
+/* HOVER END */
+
+
+
 
 h3{
     font-size: min(1rem, 4vw);
