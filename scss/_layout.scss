@@ -124,36 +124,42 @@
 
 
 .slide__container{
-  display: grid;
+   display: grid;
    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1.2fr;
-    position: relative;
+   /* grid-template-rows: 1fr 1.2fr;*/
+   grid-template-rows: minmax(25vh, 1fr) auto;
+   position: relative;
     @include v.responsive(tablet){
-        grid-template-rows: 1fr 0.5fr;
-    }
+      grid-template-rows: minmax(50vh, 1fr) auto;
+    } 
     @include v.responsive(desktop){
       grid-template-rows: 1fr;
-        grid-template-columns: 1.5fr 1fr;
+      grid-template-columns: 1.5fr 1fr;
     }
 }
 
 .container__buttons{
-   position: absolute;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: min(25vh, 1fr);
+    /* display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1.2fr;  */
+  
+    @include v.responsive(tablet) {
+      height: 50vh;
+    } 
+
+    @include v.responsive(desktop) {
+      position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     /* z-index: 0; */
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1.2fr; 
-    
-
-    @include v.responsive(tablet) {
-        grid-template-rows: 0.88fr 0.5fr; 
-    }
-
-    @include v.responsive(desktop) {
         grid-template-rows: 1fr;
         grid-template-columns: 1.5fr 1fr;
     }
@@ -161,6 +167,7 @@
 
 .img__gallery{
     width: 100%;
+    height: 100%;
     @include v.responsive(desktop){
         grid-area: 1 / 1 / 1 / 1;
     }
@@ -223,13 +230,17 @@
 
 
 .gallery__buttons{
-    grid-area: 1 / 1 / 2 / 2;
-    position: relative;
+    /* grid-area: 1 / 1 / 2 / 2;
+    position: relative; */
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: flex-end; 
     align-items: flex-end; 
+    @include v.responsive(tablet){
+     /*  grid-area: 1 / 1 / 1 / 1;
+      align-self: end; */
+    }
     @include v.responsive(desktop){
       grid-area: 1 / 2 / 1 / 2;
       justify-content: flex-start;
