@@ -26,7 +26,7 @@ h2{
     }
 
     @include v.responsive(desktop){
-        font-size: clamp(1rem, 1vw, 2rem);
+        font-size: clamp(0.96rem, 1vw, 2rem);
         margin-block-end: min(4vh, 3rem);
 
     }
