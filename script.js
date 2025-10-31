@@ -56,17 +56,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //end gallery slider
 
+  //mobile menu
+
   const mobileBtn = document.querySelector(".mobile__btn");
   const mobileOpen = document.querySelector(".mobile__open");
   const mobileClose = document.querySelector(".mobile__close");
   const headerNav = document.querySelector(".header__nav");
+  const overlay = document.querySelector(".overlay");
 
   function toggleMobileMenu() {
     headerNav.classList.toggle("open");
     document.body.classList.toggle("no-scroll");
     mobileOpen.classList.toggle("inactive");
     mobileClose.classList.toggle("inactive");
+    overlay.classList.toggle("inactive");
   }
+
+  overlay.addEventListener("click", toggleMobileMenu);
 
   const desktopMediaQuery = window.matchMedia("(min-width: 64em)");
 
