@@ -33,7 +33,7 @@ h2{
 }
 
 .shop__container{
-    z-index: 1000;
+    z-index: 1000; 
     display: flex;
     cursor: pointer;
     & a{
@@ -68,7 +68,17 @@ h2{
     transition: 0.3s ease-out;
 }
 
-@keyframes bounceX {
+
+@keyframes bounceXM {
+  0%, 100% {
+    transform: translateX(0); /* Starting and ending position */
+  }
+  50% {
+    transform: translateX(15px); /* Move right */
+  }
+}
+
+@keyframes bounceXD {
   0%, 100% {
     transform: translateX(0); /* Starting and ending position */
   }
@@ -78,7 +88,10 @@ h2{
 }
 
 .shop__container:hover .shop__arrow{
-    animation: bounceX 1.3s infinite;
+    animation: bounceXM 1.3s infinite;
+    @include v.responsive(tablet){
+    animation: bounceXD 1.3s infinite;
+    }
 }
 
 

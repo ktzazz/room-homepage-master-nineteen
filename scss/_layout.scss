@@ -136,6 +136,7 @@
     }
 }
 
+
 .container__buttons{
    position: absolute;
     top: 0;
@@ -145,7 +146,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 28rem;
-
+    pointer-events: none;
     @include v.responsive(tablet) {
         grid-template-rows: 1fr 20rem; 
     }
@@ -173,7 +174,7 @@
     padding: min(6rem, 10vh) min(6rem, 9vw);
 
     & .shop__gallery{
-      position: fixed;
+      position: absolute;
       bottom:7%; 
     }
 
@@ -237,6 +238,7 @@
     display: flex;
     justify-content: flex-end; 
     align-items: flex-end; 
+    pointer-events: all;
     @include v.responsive(desktop){
       grid-area: 1 / 2 / 1 / 2;
       justify-content: flex-start;
