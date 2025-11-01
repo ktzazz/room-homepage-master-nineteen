@@ -40,10 +40,10 @@
 .mobile__close{
     position: absolute;
     top: 0;
-    transform: translateY(-2.5vh);
-    @include v.responsive(tablet){
+    transform: translateY(-3.5vh);
+   /*  @include v.responsive(tablet){
       transform: translateY(-3.5vh);
-    }
+    } */
 }
 
 
